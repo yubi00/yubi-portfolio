@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 
-const mongodbUrl = 'mongodb://yubikhadka:12tomhanks@ds029803.mlab.com:29803/projects'
-
-mongoose.connect(mongodbUrl, {
+mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

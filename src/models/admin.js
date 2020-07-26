@@ -38,15 +38,15 @@ const adminSchema = new mongoose.Schema({
 //methods are used whenever you want to query an individual document. only instances of model can access methods
 adminSchema.methods.generateAuthToken = async function() {
     const admin = this
-    const token = jwt.sign({_id: admin._id.toString()}, "yubilovesbuchu")
+    const token = jwt.sign({_id: admin._id.toString()}, process.env.JWT_SECRET_KEY)
     admin.tokens = admin.tokens.concat({ token })
     await admin.save()
     return token
 }
-
+//manipulate adminschema before sending out the admin response
 adminSchema.methods.toJSON = function() {
     const admin = this
-    const adminObject = admin.toObject()
+    const adminObject = admin.toObject() //converts mongoose document into plain javascript object
 
     delete adminObject.password
     delete adminObject.tokens
