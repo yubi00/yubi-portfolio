@@ -1,21 +1,20 @@
 const express = require('express')
-const { v4: uuid } = require('uuid')
 const Project = require('../models/project')
 const projectRouter = express.Router()
 const getProject = require('../middleware/getProject')
 const auth = require('../middleware/auth')
 
-projectRouter.get('/projects',auth, async (req, res) => {
+projectRouter.get('/projects', async (req, res) => {
     try {
-        const projects = await Project.find({})
+         const projects = await Project.find({}).limit(parseInt(req.query.limit)).skip(parseInt(req.query.skip)).exec()
         res.status(200).send({ projects })
     } catch (e) {
-        res.status(500).send(e)
+        res.status(500).send(e.message)
     }
    
  })
  
- projectRouter.get('/projects/:id',auth, getProject, async (req, res) => {
+ projectRouter.get('/projects/:id', getProject, async (req, res) => {
     res.status(200).send(req.project)
  })
  

@@ -2,11 +2,13 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r dotenv/config src/app.js dotenv_config_path=./config/dev.env",
-    "dev": "nodemon -r dotenv/config src/app.js dotenv_config_path=./config/dev.env"
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
+    "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +17,15 @@
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jest": "^26.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.25",
     "nodemon": "^2.0.4",
+    "supertest": "^4.0.2",
     "uuid": "^8.2.0",
     "validator": "^13.1.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
   }
 }

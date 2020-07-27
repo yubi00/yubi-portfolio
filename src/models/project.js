@@ -23,6 +23,10 @@ const projectSchema = new mongoose.Schema({
         type: Number,
         required: true,
         default: Math.floor(Date.now() / 1000)
+    },
+    completed: {
+        type: Boolean,
+        default: false
     }
 })
 

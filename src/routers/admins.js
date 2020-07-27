@@ -24,7 +24,7 @@ adminRouter.post('/admins/login', async (req, res) => {
     try {
         const admin = await Admin.findByCredentials(req.body.email, req.body.password)
         const token = await admin.generateAuthToken()
-        res.status(200).send({
+        res.status(201).send({
             message: "Successfully logged in",
             admin,
             token
