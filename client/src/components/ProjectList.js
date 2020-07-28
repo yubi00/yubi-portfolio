@@ -1,15 +1,22 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import Project from './Project'
 
 const ProjectList = (props) => (
     <div>
-        <h1>ProjectList</h1>
-        {
-            props.projects.map((project, i) => 
+          { props.projects ?
+              props.projects.map((project, i) => 
                 <Project key={i} project={project}/>
-            )
-        }
+              )
+              : <p>No projects found</p>
+          } 
     </div>
 )
 
-export default ProjectList
+const mapStateToProps = (state) => {
+    return {
+        projects: state.projects
+    }
+}
+
+export default connect(mapStateToProps)(ProjectList)
