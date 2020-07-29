@@ -7,6 +7,18 @@ import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-dates/initialize';
 import configureStore from './store/configureStore'
+import axios from 'axios'
+
+const fetchProject = async () => {
+  try {
+    const response = await axios('http://localhost:8080/projects')
+    console.log(`projects: ${response.data}`)
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+fetchProject()
 
 const store = configureStore()
 const jsx = (

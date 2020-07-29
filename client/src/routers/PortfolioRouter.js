@@ -10,6 +10,7 @@ import Header from '../components/Header'
 import Contact from '../components/Contact'
 import NotFoundPage from '../components/NotFoundPage'
 import LoginPage from '../components/LoginPage'
+import EditProject from '../components/EditProject'
 
 const PortfolioRouter = () => (
     <Router>
@@ -18,6 +19,7 @@ const PortfolioRouter = () => (
             <Route  exact path="/" component={LoginPage}/>
             <Route path="/dashboard" component={PortfolioDashboard} />
             <Route path="/create" component={AddProject}/>
+            <Route path="/edit/:id" component={EditProject}/>
             <Route path="/contact" component={Contact}/>
             <Route component={NotFoundPage}/>
         </Switch>
