@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ProjectForm from './ProjectForm'
-import { editProject, removeProject } from '../actions/projects'
+import { startEditProject, startRemoveProject } from '../actions/projects'
 
 class EditProject extends React.Component {
     state = {
@@ -9,14 +9,12 @@ class EditProject extends React.Component {
     }
 
     editProject = (project) => {
-        this.props.editProject(this.props.project._id, project)
+        this.props.startEditProject(this.props.project._id, project)
         this.props.history.push('/dashboard')
     }
 
     removeProject = () => {
-        console.log('testing')
-        const remove = this.props.removeProject({id: this.props.project._id})
-        console.log(remove)
+        this.props.startRemoveProject({id: this.props.project._id})
         this.props.history.push('/dashboard')
     }
 
@@ -41,10 +39,10 @@ const mapStateToProps = (state, props) => {
     }
 }
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        editProject: (id, project) => dispatch(editProject(id, project)),
-        removeProject: (data) => dispatch(removeProject(data))
+        startEditProject: (id, project) => dispatch(startEditProject(id, project)),
+        startRemoveProject: (data) => dispatch(startRemoveProject(data))
     }
 }
 

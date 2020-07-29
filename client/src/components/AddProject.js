@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addProject } from '../actions/projects'
+import { startAddProject } from '../actions/projects'
 import ProjectForm from './ProjectForm'
 
 class AddProject extends Component {
     onSubmit = (project) => {
-        console.log(project.createdAt)
-        this.props.addProject(project)
+        this.props.startAddProject(project)
         this.props.history.push('/dashboard')
     }
 
@@ -22,7 +21,7 @@ class AddProject extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addProject : (project) => dispatch(addProject(project))
+        startAddProject : (project) => dispatch(startAddProject(project))
     }
 }
 

@@ -18,7 +18,7 @@ projectRouter.get('/projects', async (req, res) => {
     res.status(200).send(req.project)
  })
  
- projectRouter.post('/projects',auth, async (req, res) => {
+ projectRouter.post('/projects', async (req, res) => {
     
     const project = new Project(req.body)
 
@@ -32,7 +32,7 @@ projectRouter.get('/projects', async (req, res) => {
      }
  })
  
- projectRouter.patch('/projects/:id',auth, getProject, async (req, res) => {
+ projectRouter.patch('/projects/:id', getProject, async (req, res) => {
      const updates = Object.keys(req.body)
      const allowedUpdates = ['title', 'description', 'github', 'site', 'createdAt']
      const isValid = updates.every((update) => allowedUpdates.includes(update))
@@ -54,7 +54,7 @@ projectRouter.get('/projects', async (req, res) => {
  
  })
  
- projectRouter.delete('/projects/:id',auth, getProject, async (req, res) => {
+ projectRouter.delete('/projects/:id', getProject, async (req, res) => {
      try {
         await req.project.deleteOne()
         res.status(200).send(req.project)
