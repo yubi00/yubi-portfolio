@@ -1,28 +1,30 @@
 import React from 'react'
 import {
-    BrowserRouter as Router,
+    Router,
     Switch,
     Route
     } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 import PortfolioDashboard from '../components/PortfolioDashboard'
 import AddProject from '../components/AddProject'
-import Header from '../components/Header'
-import Contact from '../components/Contact'
 import NotFoundPage from '../components/NotFoundPage'
 import LoginPage from '../components/LoginPage'
 import EditProject from '../components/EditProject'
+import PrivateRoute from './PrivateRoute'
+
+export const history = createBrowserHistory()
 
 const PortfolioRouter = () => (
-    <Router>
-        <Header/>
+    <Router history={history}>
+        <div>
         <Switch>
             <Route  exact path="/" component={LoginPage}/>
-            <Route path="/dashboard" component={PortfolioDashboard} />
-            <Route path="/create" component={AddProject}/>
-            <Route path="/edit/:id" component={EditProject}/>
-            <Route path="/contact" component={Contact}/>
+            <PrivateRoute path="/dashboard" component={PortfolioDashboard} />
+            <PrivateRoute path="/create" component={AddProject}/>
+            <PrivateRoute path="/edit/:id" component={EditProject}/>
             <Route component={NotFoundPage}/>
-        </Switch>
+    </Switch>
+        </div>
     </Router>
 )
 
