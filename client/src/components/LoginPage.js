@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 import { startLogin } from '../actions/auth'
 import { setError } from '../actions/errors'
 import { history } from '../routers/PortfolioRouter'
+import LoadingPage from './LoadingPage'
 
 class LoginPage extends React.Component {
     state = {
         email: '',
-        password: ''
+        password: '',
+        loading: false
     }
     onemailChange = (e) => {
         const email = e.target.value
@@ -25,7 +27,7 @@ class LoginPage extends React.Component {
         if(!this.state.email || !this.state.password) {
             return this.props.setError('Invalid username or password')
         }  
-
+        this.setState(() => ({ loading: true}))
         this.props.startLogin(this.state.email, this.state.password)
         .then((res) => {
             if(history.location.pathname === '/') {
@@ -36,6 +38,7 @@ class LoginPage extends React.Component {
             this.props.setError(e)
             this.setState({ email: ''})
             this.setState({ password: ''})
+            this.setState({ loading: false})
         })       
     }
 
@@ -50,7 +53,7 @@ class LoginPage extends React.Component {
                     <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.onemailChange}/>
                     <label>Password</label>
                     <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onPasswordChange}/>
-                    <button>Login</button>
+                    <button>Login</button> {this.state.loading && <LoadingPage/>}
                 </form>
             </div>
         )

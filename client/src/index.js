@@ -34,8 +34,6 @@ axios.interceptors.response.use( (response) => {
   return Promise.reject(error);
 });
 
-
-
 const jsx = (
   <Provider store={store}>
     <PortfolioApp/>
