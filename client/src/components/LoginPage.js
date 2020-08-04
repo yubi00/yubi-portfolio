@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { startLogin } from '../actions/auth'
-import { setError } from '../actions/errors'
+import { clearErors } from '../actions/errors'
 import { history } from '../routers/PortfolioRouter'
 import LoadingPage from './LoadingPage'
 
@@ -9,7 +9,8 @@ class LoginPage extends React.Component {
     state = {
         email: '',
         password: '',
-        loading: false
+        loading: false,
+        message: null
     }
     onemailChange = (e) => {
         const email = e.target.value
@@ -21,33 +22,35 @@ class LoginPage extends React.Component {
         this.setState(() => ({ password }))
     }
 
+    componentDidUpdate(prevProps) {
+        const { error, isAuthenticated } = this.props
+        if( error !== prevProps.error ) {
+            if ( error.id === 'LOGIN_FAIL' ) {
+                this.setState({ message: error.message.message })
+            } else {
+                this.setState({ message: null })
+            }
+        }
+
+        if( isAuthenticated ) {
+            history.push('/dashboard')
+        }
+    }
+
     onSubmit =  (e) => {
         e.preventDefault()
-
-        if(!this.state.email || !this.state.password) {
-            return this.props.setError('Invalid username or password')
-        }  
-        this.setState(() => ({ loading: true}))
-        this.props.startLogin(this.state.email, this.state.password)
-        .then((res) => {
-            if(history.location.pathname === '/') {
-                history.push('/dashboard')
-            }
-        })
-        .catch((e) => {
-            this.props.setError(e)
-            this.setState({ email: ''})
-            this.setState({ password: ''})
-            this.setState({ loading: false})
-        })       
+        const { email, password } = this.state
+        //attempt to login
+        this.props.startLogin({ email, password })
+        
     }
 
 
     render() {
-        const { error } = this.props
+        const { message } = this.state
         return (
             <div>
-                {error && <p>{error}</p>}
+                { message && <h3> {message} </h3>}
                 <form onSubmit={this.onSubmit} >
                     <label>email</label>
                     <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.onemailChange}/>
@@ -62,15 +65,8 @@ class LoginPage extends React.Component {
 const mapStateToProps = (state) => {
     return {
         error: state.error,
-        token: state.auth.token
+        isAuthenticated: state.auth.isAuthenticated
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        startLogin: (email, password) =>  dispatch(startLogin(email, password)),
-        setError: (error) => dispatch(setError(error))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
+export default connect(mapStateToProps, { startLogin, clearErors})(LoginPage)

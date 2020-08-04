@@ -58,11 +58,12 @@ adminSchema.methods.toJSON = function() {
 adminSchema.statics.findByCredentials = async (email, password) => {
     const admin = await Admin.findOne({ email })
     if(!admin) {
-        throw new Error('Unable to login')
+        throw new Error('Invalid email or password')
     }
+
     const isMatch = await bcrypt.compare(password, admin.password)
     if(!isMatch) {
-        throw new Error('Unable to login')
+        throw new Error('Invalid email or password')
     }
 
     return admin

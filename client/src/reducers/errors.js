@@ -1,9 +1,15 @@
-const errorDefaultState = ''
+const errorDefaultState = {
+    message: {},
+    status: null,
+    id: null    
+}
 
 export default (state=errorDefaultState, action) => {
     switch(action.type) {
-        case 'SET_ERROR':
-            return action.error
+        case 'GET_ERRORS':
+            return {...state, ...action.payload }
+        case 'CLEAR_ERRORS':
+            return {}
         default:
             return state
     }

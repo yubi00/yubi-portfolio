@@ -11,19 +11,20 @@ import NotFoundPage from '../components/NotFoundPage'
 import LoginPage from '../components/LoginPage'
 import EditProject from '../components/EditProject'
 import PrivateRoute from './PrivateRoute'
+import PublicRoute from './PublicRoute'
 
 export const history = createBrowserHistory()
 
 const PortfolioRouter = () => (
     <Router history={history}>
         <div>
-        <Switch>
-            <Route  exact path="/" component={LoginPage}/>
-            <PrivateRoute path="/dashboard" component={PortfolioDashboard} />
-            <PrivateRoute path="/create" component={AddProject}/>
-            <PrivateRoute path="/edit/:id" component={EditProject}/>
-            <Route component={NotFoundPage}/>
-    </Switch>
+            <Switch>
+                <PublicRoute exact  path="/" component={LoginPage}/>
+                <PrivateRoute path="/dashboard" component={PortfolioDashboard} />
+                <PrivateRoute path="/create" component={AddProject}/>
+                <PrivateRoute path="/edit/:id" component={EditProject}/>
+                <Route component={NotFoundPage}/>
+            </Switch>
         </div>
     </Router>
 )

@@ -6,12 +6,11 @@ const adminRouter = express.Router()
 
 adminRouter.post('/admins', async (req, res) => {
     const admin = new Admin(req.body)
-
     try {
         await admin.save()
         const token = await admin.generateAuthToken()
         res.status(201).send({
-            message: "admin created",
+            message: "Admin Successfully Registered",
             admin,
             token
         })
@@ -22,16 +21,21 @@ adminRouter.post('/admins', async (req, res) => {
 
 adminRouter.post('/admins/login', async (req, res) => {
     try {
-        const admin = await Admin.findByCredentials(req.body.email, req.body.password)
+        const { email, password } = req.body
+        if (!email || !password) {
+            return res.status(400).send({
+                message: "Email or password cannot be empty"
+            })
+        }
+        const admin = await Admin.findByCredentials(email, password)
         const token = await admin.generateAuthToken()
         res.status(201).send({
-            message: "Successfully logged in",
             admin,
             token
-    })
+        })
     } catch(e) {
         res.status(400).send({
-            error: e.message
+            message: e.message
         })
     }
 })
@@ -44,12 +48,14 @@ adminRouter.post('/admins/logout',auth, async (req, res) => {
             message: "logged out successfully"
         })
     }catch(e) {
-        res.status(500).send(e)
+        res.status(500).send(e.message)
     }
 })
 
 adminRouter.get('/admins/me', auth, (req, res) => {
-    res.status(200).send(req.admin)
+    res.status(200).send({
+        admin: req.admin
+    })
 })
 
 adminRouter.patch('/admins/me', auth, async (req, res) => {

@@ -4,7 +4,7 @@ const projectRouter = express.Router()
 const getProject = require('../middleware/getProject')
 const auth = require('../middleware/auth')
 
-projectRouter.get('/projects', auth, async (req, res) => {
+projectRouter.get('/projects', async (req, res) => {
     try {
          const projects = await Project.find({}).limit(parseInt(req.query.limit)).skip(parseInt(req.query.skip)).exec()
         res.status(200).send({ projects })
