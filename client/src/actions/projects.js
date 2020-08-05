@@ -1,14 +1,15 @@
 import axios from 'axios'
-
+import { tokenConfig } from './auth'
+ 
 export const addProject = (project) => ({
     type:'ADD_PROJECT',
     project
 })
 
 export const startAddProject = (project = {}) => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
         try {
-            await axios.post('/projects', project)
+            await axios.post('/projects', project, tokenConfig(getState))
             dispatch(addProject(project))
         }catch(e) {
             console.log(e)
@@ -22,9 +23,9 @@ export const removeProject = ({id} = {}) => ({
 })
 
 export const startRemoveProject = ({ id } = {}) => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
         try {
-            await axios.delete(`/projects/${id}`)
+            await axios.delete(`/projects/${id}`, tokenConfig(getState))
             dispatch(removeProject({ id }))
         }catch(e) {
             console.log(e)
@@ -39,9 +40,9 @@ export const editProject = (id, updates) => ({
 })
 
 export const startEditProject = (id, updates) => {
-    return async (dispatch) => {
+    return async (dispatch, getState) => {
         try {
-            await axios.patch(`/projects/${id}`, updates)
+            await axios.patch(`/projects/${id}`, updates, tokenConfig(getState))
             dispatch(editProject(id, updates))
         } catch(e) {
             console.log(e)
