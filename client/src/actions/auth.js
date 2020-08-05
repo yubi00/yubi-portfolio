@@ -25,6 +25,16 @@ export const loadUser = () => async (dispatch, getState) => {
     }
 }
 
+export const startRegister = ({ email, password }) => async (dispatch) => {
+    try {
+        const response = await axios.post('/admins/register', { email, password })
+        dispatch({ type: REGISTER_SUCCESS, payload: response.data })
+    } catch(e) {
+        dispatch({ type: REGISTER_FAIL })
+        dispatch(returnErrors(e.response.data, e.response.status, 'REGISTER_FAIL'))
+    }
+}
+
 export const startLogin = ({ email, password }) => async (dispatch) => {
     try {
         const response = await axios.post('/admins/login', { email, password })
@@ -38,8 +48,12 @@ export const startLogin = ({ email, password }) => async (dispatch) => {
     }
 }
 
-export const logout = () => dispatch => {
-    dispatch({ type: LOGOUT_SUCCESS })
+export const logout = () => ( dispatch ) => {
+    try {
+        dispatch({ type: LOGOUT_SUCCESS })
+    } catch(e) {
+        console.log(e.response.data)
+    }
 }
 
 export const tokenConfig = (getState) => {
