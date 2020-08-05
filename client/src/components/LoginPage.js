@@ -1,72 +1,65 @@
 import React from 'react'
+import LoginSignupForm from './LoginSignupForm'
+import RegisterPage from './RegisterPage'
 import { connect } from 'react-redux'
+import { clearErrors } from '../actions/errors'
 import { startLogin } from '../actions/auth'
-import { clearErors } from '../actions/errors'
 import { history } from '../routers/PortfolioRouter'
-import LoadingPage from './LoadingPage'
 
 class LoginPage extends React.Component {
     state = {
-        email: '',
-        password: '',
-        loading: false,
+        modalIsOpen: false,
         message: null
     }
-    onemailChange = (e) => {
-        const email = e.target.value
-        this.setState(() => ({ email }))
-    }
 
-    onPasswordChange = (e) => {
-        const password = e.target.value
-        this.setState(() => ({ password }))
-    }
-
+    
     componentDidUpdate(prevProps) {
-        const { error, isAuthenticated } = this.props
+        const { error, isAuthenticated, clearErrors } = this.props
         if( error !== prevProps.error ) {
-            if ( error.id === 'LOGIN_FAIL' ) {
+            if( error.id === 'LOGIN_FAIL' ) {
                 this.setState({ message: error.message.message })
             } else {
                 this.setState({ message: null })
             }
         }
-
-        if( isAuthenticated ) {
+        
+        if ( isAuthenticated ) {
+            clearErrors()
             history.push('/dashboard')
         }
     }
+    
+    onSubmit = ({ email, password }) => {
+        const { startLogin } = this.props
+        startLogin({ email, password })
 
-    onSubmit =  (e) => {
-        e.preventDefault()
-        const { email, password } = this.state
-        //attempt to login
-        this.props.startLogin({ email, password })
-        
     }
 
+    openModal = () => {
+        this.props.clearErrors()
+        this.setState({ modalIsOpen: true })
+    }
+    
+    closeModal = () => {
+        this.setState({ modalIsOpen: false })
+    }
 
     render() {
-        const { message } = this.state
+        const { modalIsOpen, message } = this.state
         return (
             <div>
-                { message && <h3> {message} </h3>}
-                <form onSubmit={this.onSubmit} >
-                    <label>email</label>
-                    <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.onemailChange}/>
-                    <label>Password</label>
-                    <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onPasswordChange}/>
-                    <button>Login</button> {this.state.loading && <LoadingPage/>}
-                </form>
+                { message && <h3>{ message }</h3>}
+                <LoginSignupForm buttonLabel="Login" onSubmit={this.onSubmit}/>
+                <button onClick={this.openModal}>Register</button>
+                <RegisterPage openModal={modalIsOpen} closeModal={this.closeModal}/>
             </div>
         )
     }
 }
-const mapStateToProps = (state) => {
-    return {
-        error: state.error,
-        isAuthenticated: state.auth.isAuthenticated
-    }
-}
 
-export default connect(mapStateToProps, { startLogin, clearErors})(LoginPage)
+const mapStateToProps = (state) => ({
+    error: state.error,
+    isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps, { startLogin, clearErrors })( LoginPage )
