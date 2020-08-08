@@ -41,9 +41,11 @@ class RegisterPage extends Component {
                 isOpen={openModal}
                 onRequestClose={closeModal}
                 ariaHideApp={false}
+                className="register-modal"
             >
-                { message && <h3>{ message }</h3>}
-                <LoginSignupForm buttonLabel="Register" onSubmit={this.onSubmit}/>
+                <h1 className="box-layout__title">Register</h1>
+                { message && <p className="error-msg">{ message }</p>}
+                <LoginSignupForm buttonLabel="Sign Up" onSubmit={this.onSubmit}/>
             </Modal>
         )
     }

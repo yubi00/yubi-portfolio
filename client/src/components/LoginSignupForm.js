@@ -25,15 +25,25 @@ export default class LoginSignupForm extends Component {
     render() {
         const { buttonLabel } = this.props
         return (
-            <div>
-                <form onSubmit={this.onSubmit} >
-                    <label>email</label>
-                    <input type="text" name="email" placeholder="email" value={this.state.email} onChange={this.onChange}/>
-                    <label>Password</label>
-                    <input type="password" name="password" placeholder="password" value={this.state.password} onChange={this.onChange}/>
-                    <button>{ buttonLabel }</button>
+                <form className="form" onSubmit={this.onSubmit} >
+                    <input 
+                        className="text-input"  
+                        type="text"
+                        name="email" 
+                        placeholder="Your email" 
+                        value={this.state.email} 
+                        onChange={this.onChange}
+                    />
+                    <input 
+                        className="text-input" 
+                        type="password" 
+                        name="password" 
+                        placeholder="password" 
+                        value={this.state.password} 
+                        onChange={this.onChange}
+                    />
+                    <button className="button">{ buttonLabel }</button>
                 </form>
-            </div>
         )
     }
 }

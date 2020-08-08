@@ -1,0 +1,28 @@
+.button {
+    height: 50px;
+    background-color: $blue;
+    color: white;
+    font-weight: bolder;
+    font-size: $font-size-large;
+    border: none;
+    padding: $m-size $m-size;
+}
+
+.button:hover {
+    background-color: lighten($blue, 10%);
+}
+
+.button:focus {
+    outline: 0 !important;
+}
+
+.button--link {
+    background: none;
+    border: none;
+    color: $blue;
+    outline: 0 !important;
+}
+
+.button--link:hover {
+    text-decoration: underline;
+}

@@ -47,14 +47,22 @@ class LoginPage extends React.Component {
     render() {
         const { modalIsOpen, message } = this.state
         return (
-            <div>
-                { message && <h3>{ message }</h3>}
-                <LoginSignupForm buttonLabel="Login" onSubmit={this.onSubmit}/>
-                <button onClick={this.openModal}>Register</button>
-                <RegisterPage openModal={modalIsOpen} closeModal={this.closeModal}/>
+            <div className="box-layout">
+                <div className="box-layout__box">
+                    <h1 className="box-layout__title">Yubi Portfolio</h1>
+                    <div className="box-layout__body">
+                        { message && <p className="error-msg">{ message }</p>}
+                        <LoginSignupForm buttonLabel="Login" onSubmit={this.onSubmit}/>
+                        <div className="register-box">
+                            <p className="register-msg">Dont have an account?</p>
+                            <button className="button--link" onClick={this.openModal}>Sign up</button>
+                        </div>
+                    </div>
+                    <RegisterPage openModal={modalIsOpen} closeModal={this.closeModal}/>
+                </div>
             </div>
         )
-    }
+    }   
 }
 
 const mapStateToProps = (state) => ({

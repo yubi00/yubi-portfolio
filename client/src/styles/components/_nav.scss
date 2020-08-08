@@ -1,0 +1,20 @@
+.nav-content {
+    margin: $m-size 0;
+}
+
+.nav-link {
+    width: 10rem ;
+    text-decoration: none;
+    display: inline-block;
+    color: darkolivegreen;
+    background-color: lighten($off-white, 7%);
+    padding: $s-size $s-size;
+    margin-right: $s-size;
+    text-align: center;
+    border-bottom: none;
+}
+
+.nav-link:hover {
+    background-color: $blue;
+    color: white;
+}

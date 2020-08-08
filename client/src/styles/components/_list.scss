@@ -1,0 +1,13 @@
+.list-body {
+    margin-bottom: $l-size;
+    display: flex;
+    flex-flow:row wrap;
+}
+
+.list-item {
+    border: 1px solid grey; 
+    margin: $xs-size;
+    width: 39rem;
+    line-height: 8rem;
+    padding: $s-size;
+}

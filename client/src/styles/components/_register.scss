@@ -1,0 +1,16 @@
+.register-box {
+    display: flex;
+    justify-content: center;
+}
+
+.register-msg {
+    font-size: $font-size-small;
+}
+
+.register-modal {
+    width: 50rem;
+    margin:auto;
+    margin-top: 10rem;
+    padding: $m-size;
+    background: darkolivegreen;
+}

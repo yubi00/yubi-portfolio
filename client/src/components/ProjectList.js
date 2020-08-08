@@ -10,13 +10,15 @@ class ProjectList extends React.Component {
 
     render() {
         return  (
-            <div>
-                  { this.props.projects ?
-                      this.props.projects.map((project, i) => 
+            <div className="content-container">
+                <div className="list-body">
+                    { this.props.projects ?
+                        this.props.projects.map((project, i) => 
                         <Project key={i} project={project}/>
-                      )
-                      : <p>No projects found</p>
-                  } 
+                        )
+                        : <div>No projects found</div>
+                    } 
+                </div>    
             </div>
         )
     }
