@@ -26,3 +26,20 @@
 .button--link:hover {
     text-decoration: underline;
 }
+
+.button-group {
+    display: flex;
+    justify-content: flex-start;
+    >* {
+        margin-right: $m-size;
+    }
+}
+
+.remove-button {
+    background: red;
+    color: white;
+}
+
+.remove-button:hover {
+    background: lighten(red, 10%);
+}

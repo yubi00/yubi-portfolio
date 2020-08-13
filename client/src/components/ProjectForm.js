@@ -63,14 +63,14 @@ class ProjectForm extends React.Component {
 
     render(){
         return  (
-            <div>
+            <div className="content-container">
                 {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.onSubmit}>
-                    <input type="text" placeholder="add title" name="title" onChange={this.onTitleChange} value={this.state.title} />
-                    <textarea placeholder="add description" name="description" value={this.state.description} onChange={this.onDescriptionChange}>
+                <form onSubmit={this.onSubmit} className="form">
+                    <input className="text-input" type="text" placeholder="add title" name="title" onChange={this.onTitleChange} value={this.state.title} />
+                    <textarea className="textarea" placeholder="add description" name="description" value={this.state.description} onChange={this.onDescriptionChange}>
                     </textarea>
-                    <input type="text" placeholder="github profile link" name="github" value={this.state.github} onChange={this.onGithubChange}/>
-                    <input type="text" placeholder="public website link" name="site" value={this.state.site} onChange={this.onSiteChange}/>
+                    <input type="text" className="text-input" placeholder="github profile link" name="github" value={this.state.github} onChange={this.onGithubChange}/>
+                    <input type="text" className="text-input" placeholder="public website link" name="site" value={this.state.site} onChange={this.onSiteChange}/>
                     <SingleDatePicker
                         date={this.state.createdAt}
                         onDateChange={this.onDateChange}
@@ -79,8 +79,10 @@ class ProjectForm extends React.Component {
                         numberOfMonths={1}
                         isOutsideRange={() => false}
                     />
-                    <button>Save</button>
-                    {this.props.editing && <button onClick={this.props.handleRemove}>Remove</button>}
+                    <div className="button-group">
+                        <button className="button">Save</button>
+                        {this.props.editing && <button className="button remove-button" onClick={this.props.handleRemove}>Remove</button>}
+                    </div>
                 </form>
             </div>
         )

@@ -11,8 +11,8 @@ class AddProject extends Component {
 
     render(){
         return (
-            <div>
-                <h1>Add project page</h1>
+            <div className="content-container">
+                <h2 className="header__subtitle">Add Project</h2>
                 <ProjectForm onSubmit = {this.onSubmit}/>
             </div>
         )

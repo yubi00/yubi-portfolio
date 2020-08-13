@@ -5,9 +5,53 @@
 }
 
 .list-item {
-    border: 1px solid grey; 
-    margin: $xs-size;
-    width: 39rem;
-    line-height: 8rem;
+    border: 1px solid grey;
+    border-radius: 10px; 
+    flex: 30rem;
+    margin: 0 $xs-size $xs-size 0;
+    line-height: 3rem;
     padding: $s-size;
 }
+
+.list-item__title {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+
+ .list-item__title:hover {
+     color: yellow;
+ }
+
+ .list-item__date {
+     color: #dcdcdc;
+ }
+
+ .list-item__desc {
+     text-align: justify;
+     margin-bottom: $l-size;
+ }
+
+ .list-item__site {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     margin: $m-size 0 $s-size 0;
+ }
+
+ .site-link {
+     text-decoration: none;
+     color: white;
+     background: darkseagreen;
+     padding: $xs-size $xs-size;
+     line-height: 1.6;
+     width: 10rem;
+     text-align: center;
+     font-weight: bolder;
+     border-radius: 20px;
+ }
+
+ .site-link:hover {
+     background: darken(darkseagreen, 10%);
+     color: yellow;
+ }

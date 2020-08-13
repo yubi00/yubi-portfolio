@@ -11,3 +11,8 @@
     background: $off-white;
     outline: none;
 }
+
+.textarea {
+    @extend .text-input;
+    height: 30rem;
+}
