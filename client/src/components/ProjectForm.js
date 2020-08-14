@@ -11,7 +11,7 @@ class ProjectForm extends React.Component {
             github: props.project ? props.project.github : '',
             site: props.project ? props.project.site : '',
             calenderFocused: false,
-            createdAt: props.project ? moment(props.project.createdAt): moment(),
+            createdAt: props.project ? moment.unix(props.project.createdAt): moment(),
             error: ''
         }
     }

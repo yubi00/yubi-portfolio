@@ -36,10 +36,10 @@
 }
 
 .remove-button {
-    background: red;
+    background: grey;
     color: white;
 }
 
 .remove-button:hover {
-    background: lighten(red, 10%);
+    background: lighten(grey, 10%);
 }

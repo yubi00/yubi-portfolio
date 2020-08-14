@@ -1,16 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { usePromiseTracker } from 'react-promise-tracker'
+import Loader from 'react-promise-loader'
 import Project from './Project'
 import { startSetProjects } from '../actions/projects'
 
 class ProjectList extends React.Component {
+   
     componentDidMount() {
         this.props.startSetProjects()
     }
 
     render() {
-        return  (
+        return (
             <div className="content-container">
+                <Loader promiseTracker={usePromiseTracker} />
                 <div className="list-body">
                     { this.props.projects ?
                         this.props.projects.map((project, i) => 
@@ -18,7 +22,7 @@ class ProjectList extends React.Component {
                         )
                         : <div>No projects found</div>
                     } 
-                </div>    
+                </div> 
             </div>
         )
     }

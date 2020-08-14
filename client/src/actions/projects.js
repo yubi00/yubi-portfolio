@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { trackPromise } from 'react-promise-tracker'
 import { tokenConfig } from './auth'
  
 export const addProject = (project) => ({
@@ -55,12 +56,12 @@ export const setProjets = (projects) => ({
     projects
 })
 
-export const startSetProjects = () => {
-    return (dispatch) => {
-       axios.get('/projects')
-        .then((response) => {
-            const projects = response.data.projects
-            dispatch(setProjets(projects))
-        })
+export const startSetProjects =  () => {
+    return async (dispatch) => {
+       await trackPromise(axios.get('/projects')
+       .then((response) => {
+           const projects = response.data.projects
+           dispatch(setProjets(projects))
+       }))
     }
 }

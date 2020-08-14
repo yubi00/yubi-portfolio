@@ -9,7 +9,7 @@ const Project = ({ project }) => (
             <div className="list-item__desc">{project.description}</div>
             <div className="list-item__site">
                 <a href={project.github} target="_blank" rel="noopener noreferrer" className="site-link">Github</a>
-                <a href={project.site} target="_blank" rel="noopener noreferrer" className="site-link">Site</a>
+              { project.site && <a href={project.site} target="_blank" rel="noopener noreferrer" className="site-link">Site</a> }  
             </div>
         </div>
 )
