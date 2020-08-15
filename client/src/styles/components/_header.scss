@@ -1,5 +1,5 @@
 .header {
-    background: darkolivegreen;
+    background: #189AB4;
 }
 
 .header__content {
@@ -10,8 +10,9 @@
 }
 
 .header__title {
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
+    font-weight: bolder;
     outline: none;
     h1 {
         margin: 0;
@@ -19,6 +20,6 @@
 }
 
 .header__subtitle {
-    color: darken(yellow, 7%);
+    color: darken(#05445E, 7%);
 }
 

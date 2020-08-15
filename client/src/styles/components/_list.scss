@@ -8,23 +8,24 @@
     border: 1px solid grey;
     border-radius: 10px; 
     flex: 30rem;
-    margin: 0 $xs-size $xs-size 0;
+    margin: 0 $s-size $s-size 0;
     line-height: 3rem;
     padding: $s-size;
 }
 
 .list-item__title {
     text-decoration: none;
-    color: white;
+    color: #05445E;
     outline: none;
+    margin-bottom: $s-size;
 }
 
  .list-item__title:hover {
-     color: yellow;
+     color: darken(#05445E, 7%);
  }
 
  .list-item__date {
-     color: #dcdcdc;
+     color: #50655B;
  }
 
  .list-item__desc {
@@ -42,7 +43,7 @@
  .site-link {
      text-decoration: none;
      color: white;
-     background: darkseagreen;
+     background: #1C9B8E;
      padding: $xs-size $xs-size;
      line-height: 1.6;
      width: 10rem;
@@ -52,6 +53,6 @@
  }
 
  .site-link:hover {
-     background: darken(darkseagreen, 10%);
-     color: yellow;
+     background: darken(#1C9B8E, 10%);
+     color: white;
  }

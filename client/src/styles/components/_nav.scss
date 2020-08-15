@@ -6,15 +6,17 @@
     width: 10rem ;
     text-decoration: none;
     display: inline-block;
-    color: darkolivegreen;
-    background-color: lighten($off-white, 7%);
+    color: white;
+    background-color: #1C9B8E;
+    font-weight: bolder;
     padding: $s-size $s-size;
     margin-right: $s-size;
     text-align: center;
     border-bottom: none;
+    border-radius: 5px;
 }
 
 .nav-link:hover {
-    background-color: $blue;
+    background-color: lighten(#1C9B8E,5%);
     color: white;
 }

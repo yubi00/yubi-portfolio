@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 *:focus {
@@ -11,7 +13,7 @@ html {
 }
 
 body {
-    background-color: darkolivegreen;
+    background-color: #D4F1F4;
     font-family: Arial, Helvetica, sans-serif;
     font-size: $font-size-medium;
     line-height: 1.6;

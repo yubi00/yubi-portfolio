@@ -1,15 +1,16 @@
 .button {
     height: 50px;
-    background-color: $blue;
+    background-color: #05445E;
     color: white;
     font-weight: bolder;
     font-size: $font-size-large;
     border: none;
+    border-radius: 5px;
     padding: $m-size $m-size;
 }
 
 .button:hover {
-    background-color: lighten($blue, 10%);
+    background-color: lighten(#05445E, 10%);
 }
 
 .button:focus {
