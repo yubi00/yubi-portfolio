@@ -44,7 +44,7 @@ class RegisterPage extends Component {
                 className="register-modal"
             >
                 <h1 className="box-layout__title">Register</h1>
-                { message && <p className="error-msg">{ message }</p>}
+                { message && <p className="error-msg">*{ message }</p>}
                 <LoginSignupForm buttonLabel="Sign Up" onSubmit={this.onSubmit}/>
             </Modal>
         )

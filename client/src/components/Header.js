@@ -8,12 +8,16 @@ const Header = (props) => (
         <div className="content-container">
             <div className="header__content">
                 <Link to="/" className="header__title"><h1>Yubi Khadka</h1></Link>
-                { props.isAuthenticated && 
-                    <div className="nav-content">
-                        <Link className="nav-link" to="/create" >Create</Link>
-                        <Link className="nav-link" onClick= {props.logout}>Logout</Link>
-                    </div> 
-                }
+                    { props.isAuthenticated ? 
+                        <div>
+                            <Link className="nav-link" to="/create" >Create</Link>
+                            <Link className="nav-link" onClick= {props.logout}>Logout</Link>
+                        </div> :
+                        <a  href="https://github.com/yubi00"  
+                            className="nav-link" 
+                            target="_blank" rel="noopener noreferrer"
+                        >Github</a>
+                    }
             </div>
         </div>
     </header>

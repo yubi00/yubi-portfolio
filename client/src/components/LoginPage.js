@@ -51,7 +51,7 @@ class LoginPage extends React.Component {
                 <div className="box-layout__box">
                     <h1 className="box-layout__title">Yubi Portfolio</h1>
                     <div className="box-layout__body">
-                        { message && <p className="error-msg">{ message }</p>}
+                        { message && <p className="error-msg">*{ message }</p>}
                         <LoginSignupForm buttonLabel="Login" onSubmit={this.onSubmit}/>
                         <div className="register-box">
                             <p className="register-msg">Dont have an account?</p>

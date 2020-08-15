@@ -4,13 +4,11 @@
 }
 
 .aboutme {
-    height: 30rem;
+    height: 35rem;
     background: #50655B;
     color: white;
     margin: 0 auto;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+    position: relative;
     margin-bottom: $xl-size;
 }
 
@@ -19,4 +17,7 @@
     left: 23rem;
     top: 8rem;
     font-size: 3rem;
+    > * {
+        margin: $s-size 0;
+    }
 }

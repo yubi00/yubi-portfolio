@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { loadUser } from '../actions/auth'
 import ProjectList from './ProjectList'
 import Header from './Header'
+import FooterPage from './FooterPage'
 
 class PortfolioDashboard extends Component {
     componentDidMount() {
@@ -16,10 +17,12 @@ class PortfolioDashboard extends Component {
                 <div className="aboutme">
                     <div className="aboutme-content">
                         <h1>Hi, I'm Yubi. </h1>
-                        <h3>I am an enthusiast developer</h3>
+                        <h3>I am a Full Stack Developer</h3>
+                        <a href="#myworks" className="nav-link">View my works</a>
                     </div>
                 </div>
                 <ProjectList/>
+                <FooterPage/>
             </div>
         )
     }

@@ -12,7 +12,7 @@ class AddProject extends Component {
     render(){
         return (
             <div className="content-container">
-                <h2 className="header__subtitle">Add Project</h2>
+                <h1 className="header__subtitle">Add Project</h1>
                 <ProjectForm onSubmit = {this.onSubmit}/>
             </div>
         )
