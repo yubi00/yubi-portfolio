@@ -7,11 +7,17 @@ const Header = (props) => (
     <header className="header">
         <div className="content-container">
             <div className="header__content">
-                <Link to="/dashboard" className="header__title"><h1>Yubi Khadka</h1></Link>
-                <button className="button" onClick= {props.logout}>Logout</button>
+                <Link to="/" className="header__title"><h1>Yubi Khadka</h1></Link>
+                { props.isAuthenticated && <button className="button" onClick= {props.logout}>Logout</button>}
             </div>
         </div>
     </header>
 )
 
-export default connect(undefined, { logout }) (Header)
+const mapStateToProps = (state) => {
+    return {
+        isAuthenticated: state.auth.isAuthenticated
+    }
+}
+
+export default connect(mapStateToProps, { logout }) (Header)

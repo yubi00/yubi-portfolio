@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { loadUser } from '../actions/auth'
 import ProjectList from './ProjectList'
+import Header from './Header'
 
 class PortfolioDashboard extends Component {
     componentDidMount() {
@@ -10,12 +11,14 @@ class PortfolioDashboard extends Component {
     }
 
     render() {
+        const { isAuthenticated } = this.props
         return (
             <div>
+                <Header/>
                 <div className="content-container">
                     <div className="nav-content">
-                        <Link className="nav-link" to="/dashboard" >Dashboard</Link>
-                        <Link className="nav-link" to="/create" >Create</Link>
+                        <Link className="nav-link" to="/" >Dashboard</Link>
+                        { isAuthenticated && <Link className="nav-link" to="/create" >Create</Link> }
                     </div>
                 </div>
                 <ProjectList/>
@@ -24,4 +27,8 @@ class PortfolioDashboard extends Component {
     }
 }
 
-export default connect(null, { loadUser })(PortfolioDashboard)
+const mapStateToProps = (state) => ({
+    isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps, { loadUser })(PortfolioDashboard)

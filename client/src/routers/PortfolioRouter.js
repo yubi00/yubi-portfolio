@@ -19,8 +19,8 @@ const PortfolioRouter = () => (
     <Router history={history}>
         <div>
             <Switch>
-                <PublicRoute exact path="/" component={LoginPage}/>
-                <PrivateRoute path="/dashboard" component={PortfolioDashboard} />
+                <Route exact path="/" component={PortfolioDashboard}/>
+                <PublicRoute path="/admin" component={LoginPage} />
                 <PrivateRoute path="/create" component={AddProject}/>
                 <PrivateRoute path="/edit/:id" component={EditProject}/>
                 <Route component={NotFoundPage}/>
