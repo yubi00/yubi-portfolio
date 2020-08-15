@@ -2,22 +2,3 @@
     margin: 0 auto;
     max-width: 90rem;
 }
-
-.aboutme {
-    height: 35rem;
-    background: #50655B;
-    color: white;
-    margin: 0 auto;
-    position: relative;
-    margin-bottom: $xl-size;
-}
-
-.aboutme-content {
-    position: absolute;
-    left: 23rem;
-    top: 8rem;
-    font-size: 3rem;
-    > * {
-        margin: $s-size 0;
-    }
-}

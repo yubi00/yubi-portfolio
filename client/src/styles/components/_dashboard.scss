@@ -1,0 +1,27 @@
+
+.aboutme {
+    height: 38rem;
+    background: #50655B;
+    color: white;
+}
+
+.aboutme-content {
+    padding: $m-size 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 3rem;
+    > * {
+        margin: $s-size 0;
+    }
+}
+
+.aboutme-left {
+    > * {
+        margin-bottom: $m-size;
+    }
+}
+
+.aboutme-img {
+    border-radius: 50%;
+    width: 250px;
+}

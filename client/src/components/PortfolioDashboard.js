@@ -15,10 +15,16 @@ class PortfolioDashboard extends Component {
             <div>
                 <Header/>
                 <div className="aboutme">
-                    <div className="aboutme-content">
-                        <h1>Hi, I'm Yubi. </h1>
-                        <h3>I am a Full Stack Developer</h3>
-                        <a href="#myworks" className="nav-link">View my works</a>
+                    <div className="content-container">
+                        <div className="aboutme-content">
+                            <img src="/images/yubi.jpg" alt="" className="aboutme-img" />
+                            <div className="aboutme-left">
+                                <h1>Hi, I'm Yubi. </h1>
+                                <h3>I am a Full Stack Developer</h3>
+                                <a href="#myworks" className="nav-link">View my works</a>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <ProjectList/>
