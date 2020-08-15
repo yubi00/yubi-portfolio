@@ -1,17 +1,18 @@
 
 .aboutme {
-    height: 38rem;
+    height: 60rem;
     background: #50655B;
     color: white;
+    margin-bottom: $xxl-size;
 }
 
 .aboutme-content {
-    padding: $m-size 0;
+    padding: $xxl-size 0;
     display: flex;
     justify-content: space-between;
     font-size: 3rem;
     > * {
-        margin: $s-size 0;
+        margin: $m-size 0;
     }
 }
 

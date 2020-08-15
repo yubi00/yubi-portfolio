@@ -1,8 +1,18 @@
 .list-body {
-    margin-bottom: $l-size;
+    margin-bottom: $xxl-size;
     display: flex;
     flex-flow:row wrap;
 }
+
+.list__title {
+    color: white;
+    margin-bottom: $l-size;
+    display: inline-block;
+    background: darkslategrey;
+    padding: $m-size;
+    border-radius: 5px;
+}
+
 
 .list-item {
     border: 1px solid grey;

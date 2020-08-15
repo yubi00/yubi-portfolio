@@ -14,6 +14,7 @@ class ProjectList extends React.Component {
     render() {
         return (
             <div className="content-container" id="myworks">
+                <h2 className="list__title">My Projects</h2>
                 <Loader promiseTracker={usePromiseTracker} />
                 <div className="list-body">
                     { this.props.projects ?
