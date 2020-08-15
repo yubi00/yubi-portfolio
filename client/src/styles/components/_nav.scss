@@ -3,20 +3,19 @@
 }
 
 .nav-link {
-    width: 10rem ;
     text-decoration: none;
-    display: inline-block;
     color: white;
-    background-color: #1C9B8E;
-    font-weight: bolder;
+    background-color: #05445E;
     padding: $s-size $s-size;
     margin-right: $s-size;
     text-align: center;
     border-bottom: none;
     border-radius: 5px;
+    outline: none;
+    border: none;
 }
 
 .nav-link:hover {
-    background-color: lighten(#1C9B8E,5%);
+    background-color: lighten(#05445E,5%);
     color: white;
 }

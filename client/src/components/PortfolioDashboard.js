@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { loadUser } from '../actions/auth'
 import ProjectList from './ProjectList'
@@ -11,14 +10,13 @@ class PortfolioDashboard extends Component {
     }
 
     render() {
-        const { isAuthenticated } = this.props
         return (
             <div>
                 <Header/>
-                <div className="content-container">
-                    <div className="nav-content">
-                        <Link className="nav-link" to="/" >Dashboard</Link>
-                        { isAuthenticated && <Link className="nav-link" to="/create" >Create</Link> }
+                <div className="aboutme">
+                    <div className="aboutme-content">
+                        <h1>Hi, I'm Yubi. </h1>
+                        <h3>I am an enthusiast developer</h3>
                     </div>
                 </div>
                 <ProjectList/>
@@ -27,8 +25,5 @@ class PortfolioDashboard extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    isAuthenticated: state.auth.isAuthenticated
-})
 
-export default connect(mapStateToProps, { loadUser })(PortfolioDashboard)
+export default connect(undefined, { loadUser })(PortfolioDashboard)

@@ -18,6 +18,7 @@
     color: #05445E;
     outline: none;
     margin-bottom: $s-size;
+    font-weight: bolder;
 }
 
  .list-item__title:hover {
@@ -26,6 +27,7 @@
 
  .list-item__date {
      color: #50655B;
+     font-size: $s-size;
  }
 
  .list-item__desc {

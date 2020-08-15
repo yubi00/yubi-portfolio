@@ -2,3 +2,19 @@
     margin: 0 auto;
     max-width: 90rem;
 }
+
+.aboutme {
+    height: 30rem;
+    background: #50655B;
+    color: white;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: $l-size;
+}
+
+.aboutme-content {
+    position: absolute;
+    left: 23rem;
+    top: 10rem;
+    font-size: 3rem;
+}
