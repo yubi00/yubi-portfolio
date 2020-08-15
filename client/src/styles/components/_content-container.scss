@@ -8,13 +8,15 @@
     background: #50655B;
     color: white;
     margin: 0 auto;
-    position: relative;
-    margin-bottom: $l-size;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-bottom: $xl-size;
 }
 
 .aboutme-content {
     position: absolute;
     left: 23rem;
-    top: 10rem;
+    top: 8rem;
     font-size: 3rem;
 }
