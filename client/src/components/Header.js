@@ -11,7 +11,7 @@ const Header = (props) => (
                     { props.isAuthenticated ? 
                         <div>
                             <Link className="nav-link" to="/create" >Create</Link>
-                            <Link className="nav-link" onClick= {props.logout}>Logout</Link>
+                            <Link className="nav-link" to="/" onClick= {props.logout}>Logout</Link>
                         </div> :
                         <div>
                             <a  href="https://github.com/yubi00"  

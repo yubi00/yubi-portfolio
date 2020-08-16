@@ -6,11 +6,17 @@
 
 .list__title {
     color: white;
-    margin-bottom: $l-size;
+    margin-bottom: $s-size;
     display: inline-block;
     background: darkslategrey;
     padding: $m-size;
     border-radius: 5px;
+    @media(max-width: $desktop-breakpoint){
+        font-size: $l-size;
+        display: block;
+        margin: 0 $s-size $xs-size $s-size;;
+        border-radius: 5px;
+    }
 }
 
 .list__title:hover{
@@ -25,6 +31,10 @@
     margin: 0 $s-size $s-size 0;
     line-height: 3rem;
     padding: $s-size;
+    @media(max-width: $desktop-breakpoint){
+        margin: 0 $s-size $s-size $s-size;
+    }
+
 }
 
 .list-item:hover {

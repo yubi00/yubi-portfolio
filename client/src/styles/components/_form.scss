@@ -4,4 +4,12 @@
     > * {
         margin-bottom: $l-size;
     }
+
+    @media(max-width: $desktop-breakpoint) {
+        .form {
+            > * {
+                margin-bottom: $m-size;
+            }
+        }
+    }
 }
