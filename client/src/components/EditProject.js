@@ -10,12 +10,12 @@ class EditProject extends React.Component {
 
     editProject = (project) => {
         this.props.startEditProject(this.props.project._id, project)
-        this.props.history.push('/dashboard')
+        this.props.history.push('/')
     }
 
     removeProject = () => {
         this.props.startRemoveProject({id: this.props.project._id})
-        this.props.history.push('/dashboard')
+        this.props.history.push('/')
     }
 
     render() {

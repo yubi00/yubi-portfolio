@@ -6,7 +6,7 @@ import ProjectForm from './ProjectForm'
 class AddProject extends Component {
     onSubmit = (project) => {
         this.props.startAddProject(project)
-        this.props.history.push('/dashboard')
+        this.props.history.push('/')
     }
 
     render(){
