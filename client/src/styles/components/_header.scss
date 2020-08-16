@@ -23,7 +23,16 @@
 }
 
 .header__subtitle {
-    color: darken(#05445E, 7%);
+    background: darken(#05445E, 7%);
+    color: white;
     margin: $l-size 0;
+    display: inline-block;
+    padding: $m-size;
+    border-radius: 10px;
+    font-size: $l-size;
+}
+
+.header__subtitle:hover {
+    background: lighten(#05445E, 2%);
 }
 

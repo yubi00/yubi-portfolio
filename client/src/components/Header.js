@@ -13,10 +13,16 @@ const Header = (props) => (
                             <Link className="nav-link" to="/create" >Create</Link>
                             <Link className="nav-link" onClick= {props.logout}>Logout</Link>
                         </div> :
-                        <a  href="https://github.com/yubi00"  
-                            className="nav-link" 
-                            target="_blank" rel="noopener noreferrer"
-                        >Github</a>
+                        <div>
+                            <a  href="https://github.com/yubi00"  
+                                className="nav-link" 
+                                target="_blank" rel="noopener noreferrer"
+                            >Github</a>
+                            <a  href="https://linkedin.com/in/ubrajkhadka"  
+                                className="nav-link" 
+                                target="_blank" rel="noopener noreferrer"
+                            >Linkedin</a>
+                        </div>
                     }
             </div>
         </div>

@@ -13,6 +13,10 @@
     border-radius: 5px;
 }
 
+.list__title:hover{
+    background: lighten(darkslategrey, 7%);
+}
+
 
 .list-item {
     border: 1px solid grey;

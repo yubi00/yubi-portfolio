@@ -21,7 +21,7 @@ class EditProject extends React.Component {
     render() {
         return (
             <div className="content-container">
-               <h1 className="header__subtitle">Edit Project</h1> 
+               <h2 className="header__subtitle">Edit Project</h2> 
                 <ProjectForm 
                     onSubmit={this.editProject} 
                     project={this.props.project} 
