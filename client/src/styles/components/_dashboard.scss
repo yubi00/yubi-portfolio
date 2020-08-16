@@ -5,7 +5,7 @@
     color: white;
     margin-bottom: $xxl-size;
     @media(max-width: $desktop-breakpoint) {
-        height: 38rem;
+        height: 40rem;
         margin-bottom: $xs-size;
     }
 }
@@ -13,7 +13,6 @@
 .aboutme-content {
     padding: $xxl-size $xl-size;
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
     font-size: 3rem;
     > * {
@@ -39,9 +38,28 @@
 .aboutme-img {
     border-radius: 50%;
     width: 250px;
+    height: 250px;
     margin-right: $l-size;
     @media(max-width: $desktop-breakpoint) {
         width: 150px;
+        height: 150px;
         margin-right: $xs-size;
     }
+}
+
+.view-info {
+    text-decoration: none;
+    color: white;
+    background: #05445E;
+    padding: $s-size;
+    border-radius: 5px;
+    
+    @media(max-width: $desktop-breakpoint) {
+        font-size: $font-size-small;
+        padding: $s-size;
+    }
+}
+
+.view-info:hover {
+    background: lighten(#05445E, 7%);
 }

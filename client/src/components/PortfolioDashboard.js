@@ -21,10 +21,9 @@ class PortfolioDashboard extends Component {
                             <div className="aboutme-left">
                                 <h1>Hi, I'm Yubi. </h1>
                                 <h3>I am a Full Stack Developer</h3>
-                                <a href="#myworks" className="nav-link">View my works</a>
+                                <a href="#myworks" className="view-info">View my works</a>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
                 <ProjectList/>

@@ -8,8 +8,11 @@
 
 .footer-content {
     color:darken(#05445E, 20%);
-    font-size: $m-size;
+    font-size: $font-size-medium;
     margin-left: $m-size;
+    @media(max-width: $desktop-breakpoint) {
+        font-size: $font-size-small;
+    }
 }
 
 .footer__contact {
@@ -21,5 +24,12 @@
 
     img:hover {
         opacity: 1;
+    }
+
+    @media(max-width: $desktop-breakpoint) {
+        img {
+            width: 30px;
+            height: 30px;
+        }
     }
 }
