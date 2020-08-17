@@ -9,7 +9,6 @@
 .footer-content {
     color:darken(#05445E, 20%);
     font-size: $font-size-medium;
-    margin-left: $m-size;
     @media(max-width: $desktop-breakpoint) {
         font-size: $font-size-small;
     }

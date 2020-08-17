@@ -1,12 +1,13 @@
 .list-body {
-    margin-bottom: $xxl-size;
+    margin-bottom: $m-size;
     display: flex;
     flex-flow:row wrap;
+    padding: $s-size;
 }
 
 .list__title {
     color: white;
-    margin-bottom: $s-size;
+    margin: 0 $s-size $s-size $s-size;
     display: inline-block;
     background: darkslategrey;
     padding: $m-size;
@@ -14,7 +15,7 @@
     @media(max-width: $desktop-breakpoint){
         font-size: $l-size;
         display: block;
-        margin: 0 $s-size $xs-size $s-size;;
+        margin: 0 $s-size;;
         border-radius: 5px;
     }
 }
@@ -28,7 +29,7 @@
     border: 1px solid grey;
     border-radius: 10px; 
     flex: 30rem;
-    margin: 0 $s-size $s-size 0;
+    margin: $xs-size;
     line-height: 3rem;
     padding: $s-size;
     @media(max-width: $desktop-breakpoint){

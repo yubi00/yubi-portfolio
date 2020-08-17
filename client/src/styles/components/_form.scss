@@ -1,15 +1,15 @@
 .form {
     display: flex;
+    padding: $s-size;
     flex-direction: column;
     > * {
         margin-bottom: $l-size;
     }
 
     @media(max-width: $desktop-breakpoint) {
-        .form {
-            > * {
-                margin-bottom: $m-size;
-            }
-        }
+       padding: 0 $m-size;
+       > * {
+           margin-bottom: $m-size;
+       }
     }
 }

@@ -1,11 +1,9 @@
 
 .aboutme {
-    height: 60rem;
     background: #50655B;
     color: white;
-    margin-bottom: $xxl-size;
+    margin-bottom: $xl-size;
     @media(max-width: $desktop-breakpoint) {
-        height: 40rem;
         margin-bottom: $xs-size;
     }
 }
@@ -14,24 +12,30 @@
     padding: $xxl-size $xl-size;
     display: flex;
     flex-direction: row;
-    font-size: 3rem;
     > * {
         margin: $m-size $s-size;
     }
 
     @media(max-width: $desktop-breakpoint) {
-        font-size: $m-size;
-        padding: $xl-size $m-size;
+        flex-direction: column;
+        justify-content: center;
+        padding: $m-size $m-size;
+        > * {
+            margin-bottom: $s-size;
+        }
     }
 }
 
 .aboutme-left {
+    font-size: 3rem;
     > * {
         margin-bottom: $m-size;
     }
     
     @media(max-width: $desktop-breakpoint) {
-            padding: $s-size $s-size;
+            padding: $m-size $m-size;
+            margin: $s-size auto;
+            font-size: 1.5rem;
     }
 }
 
@@ -40,10 +44,13 @@
     width: 250px;
     height: 250px;
     margin-right: $l-size;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     @media(max-width: $desktop-breakpoint) {
-        width: 150px;
-        height: 150px;
-        margin-right: $xs-size;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        padding: $m-size $m-size;
+        margin: 0 auto;
     }
 }
 
@@ -53,11 +60,7 @@
     background: #05445E;
     padding: $s-size;
     border-radius: 5px;
-    
-    @media(max-width: $desktop-breakpoint) {
-        font-size: $font-size-small;
-        padding: $s-size;
-    }
+
 }
 
 .view-info:hover {
