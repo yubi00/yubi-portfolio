@@ -1,8 +1,9 @@
 
 .aboutme {
     background: #50655B;
+    height: auto;
     color: white;
-    margin-bottom: $xl-size;
+    margin-bottom: $xxl-size;
     @media(max-width: $desktop-breakpoint) {
         margin-bottom: $xs-size;
     }
@@ -34,8 +35,7 @@
     
     @media(max-width: $desktop-breakpoint) {
             padding: $m-size $m-size;
-            margin: $s-size auto;
-            font-size: 1.5rem;
+            margin: $xs-size auto;
     }
 }
 
@@ -60,9 +60,29 @@
     background: #05445E;
     padding: $s-size;
     border-radius: 5px;
+    @media(max-width: $desktop-breakpoint) {
+        font-size: $font-size-large;
+    }
 
 }
 
+.arrow {
+    border: solid white;
+    border-width: 0 8px 8px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    margin: 0 $s-size;
+  }
+
 .view-info:hover {
     background: lighten(#05445E, 7%);
+     .arrow {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
 }
