@@ -1,89 +1,88 @@
 .list-body {
-    margin-bottom: $m-size;
-    display: flex;
-    flex-flow:row wrap;
-    padding: $s-size;
+  margin-bottom: $m-size;
+  display: flex;
+  flex-flow: row wrap;
+  padding: $s-size;
 }
 
 .list__title {
-    color: white;
-    margin: 0 $s-size $s-size $s-size;
-    display: inline-block;
-    background: darkslategrey;
-    padding: $m-size;
+  color: white;
+  margin: 0 $s-size $s-size $s-size;
+  display: inline-block;
+  background: darkslategrey;
+  padding: $m-size;
+  border-radius: 5px;
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $l-size;
+    display: block;
+    margin: 0 $s-size;
     border-radius: 5px;
-    @media(max-width: $desktop-breakpoint){
-        font-size: $l-size;
-        display: block;
-        margin: 0 $s-size;;
-        border-radius: 5px;
-    }
+  }
 }
 
-.list__title:hover{
-    background: lighten(darkslategrey, 7%);
+.list__title:hover {
+  background: lighten(darkslategrey, 7%);
 }
-
 
 .list-item {
-    border: 1px solid grey;
-    border-radius: 10px; 
-    flex: 30rem;
-    margin: $xs-size;
-    line-height: 3rem;
-    padding: $s-size;
-    @media(max-width: $desktop-breakpoint){
-        margin: 0 $s-size $s-size $s-size;
-    }
-
+  border: 1px solid grey;
+  border-radius: 10px;
+  flex: 30rem;
+  margin: $xs-size;
+  line-height: 3rem;
+  padding: $s-size;
+  transition: box-shadow 0.35s ease-in;
+  @media (max-width: $desktop-breakpoint) {
+    margin: 0 $s-size $s-size $s-size;
+  }
 }
 
 .list-item:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .list-item__title {
-    text-decoration: none;
-    color: #05445E;
-    outline: none;
-    margin-bottom: $s-size;
-    font-weight: bolder;
+  text-decoration: none;
+  color: #05445e;
+  outline: none;
+  margin-bottom: $s-size;
+  font-weight: bolder;
 }
 
- .list-item__title:hover {
-     color: darken(#05445E, 7%);
- }
+.list-item__title:hover {
+  color: darken(#05445e, 7%);
+}
 
- .list-item__date {
-     color: #50655B;
-     font-size: $s-size;
- }
+.list-item__date {
+  color: #50655b;
+  font-size: $s-size;
+}
 
- .list-item__desc {
-     text-align: justify;
-     margin-bottom: $l-size;
- }
+.list-item__desc {
+  text-align: justify;
+  margin-bottom: $l-size;
+}
 
- .list-item__site {
-     display: flex;
-     justify-content: space-around;
-     align-items: center;
-     margin: $s-size 0 $s-size 0;
- }
+.list-item__site {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: $s-size 0 $s-size 0;
+}
 
- .site-link {
-     text-decoration: none;
-     color: white;
-     background: #1C9B8E;
-     padding: $xs-size $xs-size;
-     line-height: 1.6;
-     width: 10rem;
-     text-align: center;
-     font-weight: bolder;
-     border-radius: 20px;
- }
+.site-link {
+  text-decoration: none;
+  color: white;
+  background: #1c9b8e;
+  padding: $xs-size $xs-size;
+  line-height: 1.6;
+  width: 10rem;
+  text-align: center;
+  font-weight: bolder;
+  border-radius: 20px;
+}
 
- .site-link:hover {
-     background: darken(#1C9B8E, 10%);
-     color: white;
- }
+.site-link:hover {
+  background: darken(#1c9b8e, 10%);
+  color: white;
+}
