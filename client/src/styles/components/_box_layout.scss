@@ -10,8 +10,9 @@
    border: 1px solid #ccc;
    border-radius: 5px;
    width: 50rem;
-   height: 38rem;
-
+   @media (max-width: $desktop-breakpoint) {
+    margin:0 $s-size;
+  }
 }
 .box-layout__body {
     padding: 0 $m-size $m-size $m-size;

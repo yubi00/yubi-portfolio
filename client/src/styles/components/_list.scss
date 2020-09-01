@@ -25,20 +25,22 @@
 }
 
 .list-item {
+  position: relative;
   border: 1px solid grey;
-  border-radius: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   flex: 30rem;
   margin: $xs-size;
   line-height: 3rem;
   padding: $s-size;
-  transition: box-shadow 0.35s ease-in;
+  transition: transform 100ms ease-in;
   @media (max-width: $desktop-breakpoint) {
     margin: 0 $s-size $s-size $s-size;
   }
 }
 
 .list-item:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.02);
 }
 
 .list-item__title {
@@ -60,14 +62,20 @@
 
 .list-item__desc {
   text-align: justify;
-  margin-bottom: $l-size;
+  margin-bottom: $xl-size;
 }
 
 .list-item__site {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  margin: $s-size 0 $s-size 0;
+  margin: $s-size 0;
+  position: absolute;
+  bottom: 1.25px;
+  left: 70px;
+  @media (max-width: $desktop-breakpoint) {
+    left: 30px;
+  }
 }
 
 .site-link {
@@ -80,6 +88,7 @@
   text-align: center;
   font-weight: bolder;
   border-radius: 20px;
+  margin-right: 10px;
 }
 
 .site-link:hover {
