@@ -1,88 +1,90 @@
-
 .aboutme {
-    background: #50655B;
-    height: auto;
-    color: white;
-    margin-bottom: $xxl-size;
-    @media(max-width: $desktop-breakpoint) {
-        margin-bottom: $xs-size;
-    }
+  background: #50655b;
+  height: auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: $l-size;
+  @media (max-width: $desktop-breakpoint) {
+    margin-bottom: $xs-size;
+  }
 }
 
 .aboutme-content {
-    padding: $xxl-size $xl-size;
-    display: flex;
-    flex-direction: row;
-    > * {
-        margin: $m-size $s-size;
-    }
+  padding: $xxl-size $xl-size;
+  display: flex;
+  flex-direction: row;
+  > * {
+    margin: $m-size $s-size;
+  }
 
-    @media(max-width: $desktop-breakpoint) {
-        flex-direction: column;
-        justify-content: center;
-        padding: $m-size $m-size;
-        > * {
-            margin-bottom: $s-size;
-        }
+  @media (max-width: $desktop-breakpoint) {
+    flex-direction: column;
+    justify-content: center;
+    padding: $m-size $m-size;
+    > * {
+      margin-bottom: $s-size;
     }
+  }
 }
 
 .aboutme-left {
-    font-size: 3rem;
-    > * {
-        margin-bottom: $m-size;
-    }
-    
-    @media(max-width: $desktop-breakpoint) {
-            padding: $m-size $m-size;
-            margin: $xs-size auto;
-    }
+  font-size: $font-size-xlarge;
+  > * {
+    margin-bottom: $m-size;
+  }
+
+  @media (max-width: $desktop-breakpoint) {
+    padding: $m-size $m-size;
+    margin: $xs-size auto;
+    font-size: $font-size-large;
+  }
 }
 
 .aboutme-img {
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
-    margin-right: $l-size;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    @media(max-width: $desktop-breakpoint) {
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        padding: $m-size $m-size;
-        margin: 0 auto;
-    }
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  margin-right: $l-size;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  @media (max-width: $desktop-breakpoint) {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    padding: $m-size $m-size;
+    margin: 0 auto;
+  }
 }
 
 .view-info {
-    text-decoration: none;
-    color: white;
-    background: #05445E;
-    padding: $s-size;
-    border-radius: 5px;
-    @media(max-width: $desktop-breakpoint) {
-        font-size: $font-size-large;
-    }
-
+  text-decoration: none;
+  color: white;
+  background: #05445e;
+  padding: $s-size;
+  border-radius: 5px;
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $font-size-medium;
+  }
 }
 
 .arrow {
-    border: solid white;
-    border-width: 0 8px 8px 0;
-    display: inline-block;
-    padding: 3px;
-  }
-  
-  .right {
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    margin: 0 $s-size;
-  }
+  border: solid white;
+  border-width: 0 8px 8px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin: 0 $s-size;
+}
 
 .view-info:hover {
-    background: lighten(#05445E, 7%);
-     .arrow {
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
+  background: lighten(#05445e, 7%);
+  .arrow {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
 }

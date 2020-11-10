@@ -6,36 +6,36 @@ import Project from './Project'
 import { startSetProjects } from '../actions/projects'
 
 class ProjectList extends React.Component {
-   
-    componentDidMount() {
-        this.props.startSetProjects()
-    }
+  componentDidMount() {
+    this.props.startSetProjects()
+  }
 
-    render() {
-        return (
-            <div className="content-container" id="myworks">
-                <h2 className="list__title">My Projects</h2>
-                <Loader promiseTracker={usePromiseTracker} />
-                <div className="list-body">
-                    { this.props.projects ?
-                        this.props.projects.map((project, i) => 
-                        <Project key={i} project={project}/>
-                        )
-                        : <div>No projects found</div>
-                    } 
-                </div> 
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div className='content-container list__container' id='myworks'>
+        <h2 className='list__title'>My Projects</h2>
+        <Loader promiseTracker={usePromiseTracker} />
+        <div className='list-body'>
+          {this.props.projects ? (
+            this.props.projects.map((project, i) => (
+              <Project key={i} project={project} />
+            ))
+          ) : (
+            <div>No projects found</div>
+          )}
+        </div>
+      </div>
+    )
+  }
 }
 const mapStateToProps = (state) => {
-    return { projects: state.projects }
+  return { projects: state.projects }
 }
 
-const mapDispatchToProps =  (dispatch) => {  
-    return {
-        startSetProjects: () => dispatch(startSetProjects())
-    }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    startSetProjects: () => dispatch(startSetProjects())
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectList)
