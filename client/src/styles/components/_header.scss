@@ -1,5 +1,6 @@
 .header {
   background: #189ab4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   position: -webkit-sticky;
   top: 0;
@@ -18,10 +19,7 @@
   text-decoration: none;
   font-weight: bolder;
   outline: none;
-  font-size: $m-size;
-  h1 {
-    margin: 0;
-  }
+  font-size: calc(1rem + 0.2vw);
 
   @media (max-width: $desktop-breakpoint) {
     font-size: $s-size;
