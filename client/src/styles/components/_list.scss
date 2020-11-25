@@ -26,7 +26,7 @@
   @media (max-width: $desktop-breakpoint) {
     font-size: $m-size;
     padding: $s-size;
-    margin: 0 $s-size;
+    margin: $s-size $s-size;
   }
 }
 
@@ -35,11 +35,11 @@
   border: 1px solid grey;
   border-radius: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  flex: 30rem;
+  //flex: 30rem;
   margin: $xs-size;
   line-height: 3rem;
   padding: $s-size;
-  transition: transform 100ms ease-in;
+  transition: transform 200ms ease-in-out;
   @media (max-width: $desktop-breakpoint) {
     margin: 0 $s-size $s-size $s-size;
   }
@@ -63,7 +63,7 @@
 
 .list-item__date {
   color: #50655b;
-  font-size: $s-size;
+  font-size: 1.3rem;
 }
 
 .list-item__desc {
@@ -75,12 +75,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: $s-size 0;
-  position: absolute;
+  position: relative;
   bottom: 1.25px;
-  left: 70px;
   @media (max-width: $desktop-breakpoint) {
-    left: 30px;
+    margin: 0 auto;
   }
 }
 

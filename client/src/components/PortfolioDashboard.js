@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { loadUser } from '../actions/auth'
-import ProjectList from './ProjectList'
-import Header from './Header'
-import FooterPage from './FooterPage'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { loadUser } from '../actions/auth';
+import ProjectList from './ProjectList';
+import Header from './Header';
+import FooterPage from './FooterPage';
 
 class PortfolioDashboard extends Component {
   componentDidMount() {
-    this.props.loadUser()
+    this.props.loadUser();
   }
 
   render() {
@@ -15,27 +15,28 @@ class PortfolioDashboard extends Component {
       <div>
         <Header />
         <div className='aboutme'>
-          <div className='content-container'>
-            <div className='aboutme-content'>
-              <img src='/images/yubi.jpg' alt='' className='aboutme-img' />
-              <div className='aboutme-left'>
-                <h1>Hi, I'm Yubi. </h1>
-                <h3>I am a Full Stack Developer</h3>
-                <a href='#myworks' className='view-info'>
-                  View my works
-                  <span>
-                    <i className='arrow right'></i>
-                  </span>
-                </a>
-              </div>
+          <div className='content-container aboutme-content'>
+            <img src='/images/yubi.jpg' className='aboutme-img' alt='' />
+
+            <div className='aboutme__info'>
+              <h1 className='aboutme__title'>
+                Hi, I'm <strong>Yubi.</strong>{' '}
+              </h1>
+              <p className='aboutme__subtitle'>I am a Full Stack Developer</p>
+              <a href='#myworks' className='view-info'>
+                View my works
+                <span>
+                  <i className='arrow right'></i>
+                </span>
+              </a>
             </div>
           </div>
         </div>
         <ProjectList />
         <FooterPage />
       </div>
-    )
+    );
   }
 }
 
-export default connect(undefined, { loadUser })(PortfolioDashboard)
+export default connect(undefined, { loadUser })(PortfolioDashboard);

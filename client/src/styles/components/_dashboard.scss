@@ -1,59 +1,63 @@
 .aboutme {
   background: #50655b;
-  height: auto;
+  height: 85vh;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: $l-size;
+  margin-bottom: $m-size;
   @media (max-width: $desktop-breakpoint) {
-    margin-bottom: $xs-size;
+    height: auto;
   }
 }
 
 .aboutme-content {
-  padding: $xxl-size $xl-size;
   display: flex;
-  flex-direction: row;
-  > * {
-    margin: $m-size $s-size;
-  }
+  justify-content: center;
+  align-items: center;
 
   @media (max-width: $desktop-breakpoint) {
     flex-direction: column;
-    justify-content: center;
-    padding: $m-size $m-size;
-    > * {
-      margin-bottom: $s-size;
-    }
+    padding: $l-size;
   }
 }
 
-.aboutme-left {
-  font-size: $font-size-xlarge;
-  > * {
-    margin-bottom: $m-size;
-  }
-
+.aboutme__info {
   @media (max-width: $desktop-breakpoint) {
-    padding: $m-size $m-size;
-    margin: $xs-size auto;
+    text-align: center;
+  }
+}
+
+.aboutme__title {
+  font-size: $font-size-xlarge;
+  strong {
+    font-weight: 800;
+    color: #1c9b8e;
+  }
+  @media (max-width: $desktop-breakpoint) {
     font-size: $font-size-large;
   }
 }
 
+.aboutme__subtitle {
+  font-size: $font-size-large;
+  @media (max-width: $desktop-breakpoint) {
+    font-size: $font-size-medium;
+  }
+}
+
 .aboutme-img {
-  border-radius: 50%;
   width: 250px;
   height: 250px;
-  margin-right: $l-size;
+  margin-right: $m-size;
+  border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media (max-width: $desktop-breakpoint) {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    padding: $m-size $m-size;
-    margin: 0 auto;
+    border-radius: 10px;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: $m-size;
   }
 }
 
@@ -61,10 +65,17 @@
   text-decoration: none;
   color: white;
   background: #05445e;
+  display: block;
+  text-align: center;
+  font-weight: 800;
+  width: 100%;
   padding: $s-size;
-  border-radius: 5px;
+  border-radius: 8px;
+  margin-top: $xl-size;
+  transition: all 300ms ease-in;
   @media (max-width: $desktop-breakpoint) {
-    font-size: $font-size-medium;
+    padding: $s-size;
+    margin-top: $l-size;
   }
 }
 
@@ -73,6 +84,7 @@
   border-width: 0 8px 8px 0;
   display: inline-block;
   padding: 3px;
+  transition: all 500ms ease-in-out;
 }
 
 .right {

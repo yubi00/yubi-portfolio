@@ -1,46 +1,46 @@
 .button {
-    height: 50px;
-    background-color: #05445E;
-    color: white;
-    font-weight: bolder;
-    font-size: $font-size-large;
-    border: none;
-    border-radius: 5px;
-    padding: $m-size $m-size;
+  height: 50px;
+  background-color: #05445e;
+  color: white;
+  font-weight: bolder;
+  font-size: $font-size-large;
+  border: none;
+  border-radius: 5px;
+  padding: $m-size $m-size;
 }
 
 .button:hover {
-    background-color: lighten(#05445E, 10%);
+  background-color: lighten(#05445e, 10%);
 }
 
 .button:focus {
-    outline: 0 !important;
+  outline: 0 !important;
 }
 
 .button--link {
-    background: none;
-    border: none;
-    color: $blue;
-    outline: 0 !important;
+  background: none;
+  border: none;
+  color: $blue;
+  outline: 0 !important;
 }
 
 .button--link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .button-group {
-    display: flex;
-    justify-content: flex-start;
-    >* {
-        margin-right: $m-size;
-    }
+  display: flex;
+  justify-content: flex-start;
+  > * {
+    margin-right: $m-size;
+  }
 }
 
 .remove-button {
-    background: grey;
-    color: white;
+  background: grey;
+  color: white;
 }
 
 .remove-button:hover {
-    background: lighten(grey, 10%);
+  background: lighten(grey, 10%);
 }
