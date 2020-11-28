@@ -2,8 +2,10 @@ import React from 'react';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-const FooterPage = () => (
-  <div className='footer'>
+const FooterPage = ({ visible }) => (
+  <div
+    className={visible ? 'footer footer--noscroll' : 'footer footer--scroll'}
+  >
     <div className='footer__socials'>
       <a
         href='https://github.com/yubi00'

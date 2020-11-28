@@ -1,9 +1,15 @@
 .footer {
-  background: #189ab4;
   height: 10rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.footer--noscroll {
+  background: #189ab4;
+}
+
+.footer--scroll {
+  background: #1c9b8e;
 }
 
 .footer-content {

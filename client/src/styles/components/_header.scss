@@ -1,10 +1,17 @@
 .header {
-  background: #189ab4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: sticky;
   position: -webkit-sticky;
   top: 0;
   z-index: 100;
+}
+
+.header--noscroll {
+  background: #189ab4;
+}
+
+.header--scroll {
+  background: #1c9b8e;
 }
 
 .header__content {

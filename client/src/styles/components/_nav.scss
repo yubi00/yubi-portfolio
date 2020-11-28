@@ -1,23 +1,20 @@
 .nav-link {
-    text-decoration: none;
-    color: white;
-    background-color: #05445E;
-    padding: $s-size $s-size;
-    margin-right: $s-size;
-    text-align: center;
-    border-bottom: none;
-    border-radius: 5px;
-    outline: none;
-    border: none;
+  text-decoration: none;
+  color: white;
+  background: none;
+  padding: $s-size $s-size;
+  margin-right: $s-size;
+  text-align: center;
+  outline: none;
+  border: none;
 
-    @media(max-width: $desktop-breakpoint) {
-        margin-right: $xs-size;
-        padding: $xs-size;
-        font-size: $font-size-small;
-    }
+  @media (max-width: $desktop-breakpoint) {
+    margin-right: $xs-size;
+    padding: $xs-size;
+    font-size: $font-size-small;
+  }
 }
 
 .nav-link:hover {
-    background-color: lighten(#05445E,5%);
-    color: white;
+  color: #ccc;
 }
