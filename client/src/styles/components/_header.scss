@@ -8,10 +8,13 @@
 
 .header--noscroll {
   background: #189ab4;
+  transition: all 0.4s ease-in-out;
 }
 
 .header--scroll {
   background: #1c9b8e;
+  transform: scaleY(1.2);
+  transition: all 0.4s ease-in;
 }
 
 .header__content {
