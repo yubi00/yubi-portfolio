@@ -1,41 +1,50 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { usePromiseTracker } from 'react-promise-tracker'
-import Loader from 'react-promise-loader'
-import Project from './Project'
-import { startSetProjects } from '../actions/projects'
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import Project from './Project';
+import { startSetProjects } from '../actions/projects';
 
-class ProjectList extends React.Component {
-  componentDidMount() {
-    this.props.startSetProjects()
-  }
+function ProjectList({ projects, startSetProjects }) {
+  const [skip, setSkip] = useState(0);
+  // eslint-disable-next-line
+  const [limit, setLimit] = useState(3);
 
-  render() {
-    return (
-      <div className='content-container list__container' id='myworks'>
-        <h2 className='list__title'>My Projects</h2>
-        <Loader promiseTracker={usePromiseTracker} />
+  useEffect(() => {
+    startSetProjects(skip, limit);
+  }, [skip, limit, startSetProjects]);
+
+  const fetchData = () => {
+    setSkip((skip) => skip + limit);
+  };
+  return (
+    <div className='content-container list__container' id='myworks'>
+      <h2 className='list__title'>My Projects</h2>
+      <InfiniteScroll
+        dataLength={projects.length}
+        next={fetchData}
+        hasMore={skip > projects.length ? false : true}
+        loader={<p className='loader'>Loading...</p>}
+      >
         <div className='list-body'>
-          {this.props.projects ? (
-            this.props.projects.map((project, i) => (
-              <Project key={i} project={project} />
-            ))
+          {projects ? (
+            projects.map((project, i) => <Project key={i} project={project} />)
           ) : (
             <div>No projects found</div>
           )}
         </div>
-      </div>
-    )
-  }
+      </InfiniteScroll>
+    </div>
+  );
 }
+
 const mapStateToProps = (state) => {
-  return { projects: state.projects }
-}
+  return { projects: state.projects };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    startSetProjects: () => dispatch(startSetProjects())
-  }
-}
+    startSetProjects: (skip, limit) => dispatch(startSetProjects(skip, limit))
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectList)
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectList);

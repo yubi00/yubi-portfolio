@@ -10,6 +10,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: $xl-size 0;
+  @media (max-width: desktop-breakpoint) {
+    padding: $m-size 0;
+  }
 }
 
 .list__title {
