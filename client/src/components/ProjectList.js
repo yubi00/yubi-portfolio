@@ -22,7 +22,7 @@ function ProjectList({ projects, startSetProjects }) {
       <InfiniteScroll
         dataLength={projects.length}
         next={fetchData}
-        hasMore={skip > projects.length ? false : true}
+        hasMore={skip < projects.length}
         loader={<p className='loader'>Loading...</p>}
       >
         <div className='list-body'>
